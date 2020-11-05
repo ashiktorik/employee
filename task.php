@@ -23,8 +23,11 @@ include 'includes/header.php';
     ?>
 </head>
 
-<body style="padding-left: 0px">
-    <div class="container" id="task_box">
+<body>
+<main>
+        <div class="helper">
+            <div class="container_fluid top_container">
+            <div class="container" id="task_box">
         <div class="col-6" style="margin: auto">
             <div id="task-index">
                 <div class="task_outer">
@@ -78,7 +81,7 @@ include 'includes/header.php';
                                     </div>
                                 </div>
 
-                                <div class="input-group-prepend form-control">
+                                <div class="form-control">
                                     <label><b>Assaign Employee</b></label>
                                     <select select class="selectpicker" multiple data-live-search="true" name="emp[]"
                                         required>
@@ -117,8 +120,14 @@ while ($row = mysqli_fetch_array($query)) {
             </div>
         </div>
     </div>
+
+</div>
+</div>
+</main>
+
+
+
     <footer>
     </footer>
 </body>
-
 </html>

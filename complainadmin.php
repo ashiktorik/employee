@@ -21,8 +21,10 @@ die();
 </head>
 
 <body>
-
-    <div class="col-lg-6 m-auto">
+<main>
+        <div class="helper">
+            <div class="container_fluid top_container">
+            <div class="col-lg-6 m-auto">
         <br>
         <div><?php
         error_reporting(0);
@@ -78,15 +80,18 @@ $res=mysqli_fetch_array($query);{
                         }
                     }
                 </script>
-            </div><br>
-            <a href="dashboard.php"><input type="button" name="" value="Back"
-                    class="btn btn-primary col-lg-12"></a>
+                <div class="col-md-3"><a href="dashboard.php"><input type="button" name="" value="Back"
+                    class="btn btn-primary col-lg-12"></a></div>
+            </div>
                 <?php } ?>
         </div>
     </div>
     <?php
 
  ?>
+</div>
+</div>
+</main>
 </body>
 
 </html>

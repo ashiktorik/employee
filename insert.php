@@ -77,126 +77,147 @@ if(isset($_POST['done']))
 <html>
 
 <head>
-    <title></title>
-
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-        <link href="assets/css/style.css" rel="stylesheet" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"
-        integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous">
-    </script>
-<!--local:link_-->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <script src="assets/js/bootstrap.min.js"
-        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous">
-    </script>
-    <script src="assets/js/bootstrap.bundle.min.js"
-        integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous">
-    </script>
     <?php
-    include "includes/header.php";
+include 'includes/link-head.php';
+include 'includes/header.php';
     ?>
 </head>
 
 <body>
+    <main>
+        <div class="helper">
+            <div class="container_fluid top_container">
+                <div class="col-lg-6 m-auto">
+                    <form class="form" method="post" enctype="multipart/form-data">
+                        <!-- <form method="post"> -->
+                        <br>
+                        <div>
+                            <div class="card-header">
+                                <h1 class="text-white text-center">Insert Employee Details</h1>
+                            </div>
+                            <div class="alert" style="background:#0a9c64"><?= $_SESSION['message'] ?></div>
+                            <script>
+                                setTimeout(function () {
+                                    let alert = document.querySelector(".alert");
+                                    alert.remove();
+                                }, 3000);
+                            </script>
+                            <div class="form-control">
+                                <label>Dpid/Username</label>
+                                <input type="email" name="username" class="form-control" required
+                                    placeholder="Please Do not use space">
+                            </div>
 
-    <div class="col-lg-6 m-auto">
-        <form class="form"  method="post" enctype="multipart/form-data">
-            <!-- <form method="post"> -->
-            <br>
-            <div>
-                <div class="card-header">
-                    <h1 class="text-white text-center">Insert Employee Details</h1>
-                </div><br>
-                <div class="alert " ><?= $_SESSION['message'] ?></div>
-                <script>
-        setTimeout(function(){
-            let alert = document.querySelector(".alert");
-            alert.remove();
-        }, 3000);
-    </script>
-                <label>Dpid/Username</label>
-                <input type="email" name="username" class="form-control" required placeholder="Please Do not use space"><br>
+                            <div class="row">
+                                <div class="col-6 form-control">
+                                    <label>First Name</label>
+                                    <input type="text" name="first_name" class="form-control" required><br>
+                                </div>
+                                <div class="col-6 form-control">
 
-                <label>First Name</label>
-                <input type="text" name="first_name" class="form-control" required><br>
+                                    <label>Last Name</label>
+                                    <input type="text" name="last_name" class="form-control" required><br>
+                                </div>
+                            </div>
 
-                <label>Last Name</label>
-                <input type="text" name="last_name" class="form-control" required><br>
+                            <div class="form-control">
+                                <label>New Password</label>
+                                <input type="text" name="password" class="form-control">
+                            </div>
 
-                <label>New Password</label>
-                <input type="text" name="password" class="form-control"><br>
+                            <div class="row">
+                                <div class="form-control col-6">
+                                    <label>age</label>
+                                    <input type="text" name="age" class="form-control" required pattern="[0-9]{1,15}"
+                                        title="this field accepts only numbers">
+                                </div>
 
-                <label>age</label>
-                <input type="text" name="age" class="form-control" required pattern="[0-9]{1,15}"
-                    title="this field accepts only numbers"><br>
 
-                <label>Gender</label>
-                <select class="selectpicker form-control" name="gender" required>
+                                <div class="form-control col-6">
+                                    <label>Gender</label>
+                                    <select class="selectpicker form-control" name="gender" required>
                                         <option class="form-cotrol" value="male" checked>Male</option>
                                         <option class="form-cotrol" value="female" checked>Female</option>
                                         <option class="form-cotrol" value="other" checked>Other</option>
                                     </select>
-
-                <label>salary</label>
-                <input type="text" name="salary" class="form-control" required pattern="[0-9]{1,15}"
-                    title="this field accepts only numbers"><br>
-
-                <label>qualification</label>
-                <input type="text" name="qualification" class="form-control" required><br>
-
-                <label>date of Birth</label>
-                <div class="row">
-                    <div class="col-md-3"><input type="text" name="day" class="form-control" placeholder="date" required
-                            pattern="[0-9]{1,2}" title="this field accepts only numbers  and two characters"></div>-
-
-                    <div class="col-md-3"><input type="text" name="month" class="form-control" placeholder="month"
-                            required pattern="[0-9]{1,2}" title="this field accepts only numbers  and two characters">
-                    </div>-
-
-                    <div class="col-md-3"><input type="text" name="year" class="form-control" placeholder="year"
-                            required pattern="[0-9]{4,4}" title="this field accepts only numbers  and 4 characters">
-                    </div><br>
-                </div>
-
-                <label>date of Joining</label>
-                <div class="row">
-                    <div class="col-md-3"><input type="text" name="day1" class="form-control" placeholder="date"
-                            required pattern="[0-9]{1,2}" title="this field accepts only numbers  and two characters">
-                    </div>-
-
-                    <div class="col-md-3"><input type="text" name="month1" class="form-control" placeholder="month"
-                            required pattern="[0-9]{1,2}" title="this field accepts only numbers  and two characters">
-                    </div>-
-
-                    <div class="col-md-3"><input type="text" name="year1" class="form-control" placeholder="year"
-                            required pattern="[0-9]{4,4}" title="this field accepts only numbers  and 4 characters">
-                    </div><br>
-                </div> <br>
-                <div class="avatar"><label>Select your avatar: </label><input type="file" name="avatar" accept="image/*"
-                        required /></div><br>
-                <div class="row m-auto">
-                    <div class="col-md-5">
-
-                        <!-- <button class="btn btn-success col-lg-12" name="done">Add</button> -->
-                        <input type="submit" value="Register" name="done" class="btn btn-block btn-primary"
-                            href="display.php" />
-
-                    </div>
-                    <div class="col-md-5"><a href="../dashboard.php"><input type="button" name="" value="Back to records"
-                                class="btn btn-danger col-lg-12"></a></div>
+                                </div>
+                            </div>
 
 
+                            <div class="row">
+                                <div class="form-control col-6">
+                                    <label>salary</label>
+                                    <input type="text" name="salary" class="form-control" required pattern="[0-9]{1,15}"
+                                        title="this field accepts only numbers">
+                                </div>
 
+                                <div class="form-control col-6">
+                                    <label>qualification</label>
+                                    <input type="text" name="qualification" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 form-control">
+                                    <label>date of Birth</label>
+                                    <div class="row" style="display:flex;flex-wrap: nowrap;">
+                                        <input type="text" name="day" class="form-control" placeholder="Day" required
+                                            pattern="[0-9]{1,2}"
+                                            title="this field accepts only numbers  and two characters">
+
+                                        <input type="text" name="month" class="form-control" placeholder="month"
+                                            required pattern="[0-9]{1,2}"
+                                            title="this field accepts only numbers  and two characters">
+
+                                        <input type="text" name="year" class="form-control" placeholder="year" required
+                                            pattern="[0-9]{4,4}"
+                                            title="this field accepts only numbers  and 4 characters">
+                                    </div>
+                                </div>
+
+                                <div class="col-6 form-control">
+                                    <label>date of Joining</label>
+                                    <div class="row" style="display:flex;flex-wrap: nowrap;">
+                                        <input type="text" name="day1" class="form-control" placeholder="Day" required
+                                            pattern="[0-9]{1,2}"
+                                            title="this field accepts only numbers  and two characters">
+
+
+                                        <input type="text" name="month1" class="form-control" placeholder="month"
+                                            required pattern="[0-9]{1,2}"
+                                            title="this field accepts only numbers  and two characters">
+
+
+                                        <input type="text" name="year1" class="form-control" placeholder="year" required
+                                            pattern="[0-9]{4,4}"
+                                            title="this field accepts only numbers  and 4 characters">
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="avatar form-control"><label>Select your avatar: </label><input type="file"
+                                    name="avatar" accept="image/*" required /></div><br>
+                            <div class="row m-auto">
+                                <div class="col-md-5">
+
+                                    <!-- <button class="btn btn-success col-lg-12" name="done">Add</button> -->
+                                    <input type="submit" value="Register" name="done" class="btn btn-block btn-primary"
+                                        href="display.php"/></div>
+                                <div class="col-md-5">
+                                <a href="../dashboard.php"><input type="button" name=""
+                                            value="Back to records" class="btn btn-danger col-lg-12"></a>
+                                            </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </form>
                 </div>
             </div>
-        </form>
-    </div>
-    </script>
+        </div>
+    </main>
 </body>
-
 </html>
