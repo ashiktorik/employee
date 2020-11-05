@@ -36,7 +36,7 @@ $msg="Leave applied successfully";
 }
 else 
 {
-$error="Something went wrong. Please try Again";
+$error="Something went wrong. Please try again";
 }
 
 }
