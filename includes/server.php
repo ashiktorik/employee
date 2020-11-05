@@ -43,24 +43,24 @@ error_reporting(0);
 session_start();
 include "includes/conn.php";
 
-$username = $_POST['username'];
+$username = $_POST['name'];
 $Password = $_POST['password'];
 
 
 if (isset($_POST['login_emp'])) {
-    $q = "SELECT * FROM tblemployees WHERE username = '$username' and password = '$Password'";
+    $q = "SELECT * FROM tblemployees WHERE name = '$username' and password = '$Password'";
 
     $res = mysqli_query($conn, $q);
     $res1 = mysqli_num_rows($res);
 
     if ($res1 == 0) {
-        header("location:emp-login.php?user=Incorrect username or Password");
+        header("location:emp-login.php?user=Incorrect name or Password");
     }
 
     while ($row = mysqli_fetch_array($res)) {
         // filter query and set variable
-        if ($row['username'] == $username  &&  $row['password'] == $Password) {
-            $_SESSION['username'] = $username;
+        if ($row['name'] == $username  &&  $row['password'] == $Password) {
+            $_SESSION['name'] = $username;
             $_SESSION['id'] = $row['id'];
             $_SESSION['password'] = $Password;
             $_SESSION['user_role'] = $row['user_role'];
