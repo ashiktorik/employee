@@ -127,7 +127,7 @@ die();
 
 				<label>Address</label>
 				<input type="text" name="address" class="form-control" value="<?php echo $res['address']; ?>"
-					placeholder="date-month-year" required><br>
+					placeholder="Address" required><br>
 
 				<label>Phone</label>
 				<input type="text" name="phone" class="form-control" value="<?php echo $res['phone']; ?>" required
@@ -168,7 +168,7 @@ die();
 	<?php
 if(isset($_POST['done']))
 {
-$q2="update tblemployees set first_name = '$first_name' , last_name = '$last_name' , gender = '$gender' , religious = '$religious' ,  blood_group = '$blood_group' , nationality = '$nationality' , address = '$address' , phone = $phone , sos_contact = $sos_contact , age = $age , salary = $salary , qualification = '$qualification' , date_of_birth = '$date_of_birth' , date_of_join = '$date_of_join' where id = $id";
+$q2="update tblemployees set first_name = '$first_name' , last_name = '$last_name' , nid_num = '$nid_num' , gender = '$gender' , religious = '$religious' ,  blood_group = '$blood_group' , nationality = '$nationality' , address = '$address' , phone = $phone , sos_contact = $sos_contact , age = $age , salary = $salary , qualification = '$qualification' , date_of_birth = '$date_of_birth' , date_of_join = '$date_of_join' where id = $id";
 mysqli_query($conn,$q2);
 header("location:emp-profile.php?id");
 // header("refresh:0");

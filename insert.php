@@ -42,14 +42,14 @@ if(isset($_POST['done']))
 
 
 			//insert user data into database
-            $q_u = "SELECT * FROM tblemployees WHERE username = '$username'";
+            $q_u = "SELECT * FROM tblemployees WHERE name = '$username'";
               $res_u = mysqli_query($mysqli, $q_u) or die (mysqli_error($mysqli));
                 if (mysqli_num_rows($res_u) > 0){
                     header("refresh:0");
                     $_SESSION['message'] = "<font color:red>Sorry Username is not Available</font>";}
                         else{
             //if the query is successsful!
-          echo  $q="INSERT INTO `tblemployees`(`username`, `first_name`, `last_name`, `password`, `age`, `gender`, `salary`, `date_of_birth`, `date_of_join`, `qualification`,`avatar`) VALUES ('$username','$first_name','$last_name','$pass','$age','$gender','$salary','$date_of_birth','$date_of_join','$qualification','$avatar_path')";
+          echo  $q="INSERT INTO `tblemployees`(`name`, `first_name`, `last_name`, `password`, `age`, `gender`, `salary`, `date_of_birth`, `date_of_join`, `qualification`,`avatar`) VALUES ('$username','$first_name','$last_name','$pass','$age','$gender','$salary','$date_of_birth','$date_of_join','$qualification','$avatar_path')";
 
             if ($conn->query($q) === TRUE) {
                 $_SESSION['message'] = "Employee added successfully";

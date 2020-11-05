@@ -81,7 +81,7 @@ while ($res = mysqli_fetch_array($query)) {
                                 <tr>
                                     <th class="emp-list-image"><img src="<?php echo $res['avatar']?>"></th>
                                     <th><?php echo $res['id'] ?></th>
-                                    <th><?php echo $res['username'] ?></th>
+                                    <th><?php echo $res['name'] ?></th>
                                     <th><?php echo $res['first_name'] ?></th>
                                     <th><?php echo $res['age'] ?></th>
                                     <th><?php echo $res['salary'] ?></th>
