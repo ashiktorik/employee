@@ -79,7 +79,9 @@ die();
                             <div class="col-lg-6">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <h3>New Complains</h3>
+                                        <div class="table-title-holder">
+                                            <h3>New Complains</h3>
+                                        </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <table class="table table-stripped table-hover table-bordered">
@@ -125,7 +127,9 @@ while ($res = mysqli_fetch_array($query)) {
                             <div class="col-lg-6">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <h3>Runing task</h3>
+                                        <div class="table-title-holder">
+                                            <h3>Runing task</h3>
+                                        </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <table class="table table-stripped table-hover table-bordered">
@@ -175,8 +179,12 @@ while ($res = mysqli_fetch_array($query)) {
                 <div class="container_fluid">
                     <div class="col-lg-12"><br>
                         <div class="row">
-                            <h3 class="col-lg-6">Displaying Records</h3>
-                        </div><br>
+                            <div class="col-lg-12">
+                                <div class="table-title-holder">
+                                    <h3>Displaying Records</h3>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-lg-12">
                             <table class="table table-stripped table-hover table-bordered">
                                 <tr class="text-dark">
@@ -242,14 +250,18 @@ while ($res = mysqli_fetch_array($query)) {
                             </table>
                         </div>
                     </div>
-
                 </div>
-                <div class="row no-m-t no-m-b">
-                    <div class="col s12 m12 l12">
-                        <div class="card invoices-card">
-                            <div class="card-content">
 
-                                <span class="card-title">Latest Leave Applications</span>
+
+                <div class="container_fluid">
+                    <div class="col-lg-12"><br>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="table-title-holder">
+                                    <h3>Latest Leave Applications</h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
                                 <table id="example" class="display responsive-table ">
                                     <thead>
                                         <tr>
@@ -263,16 +275,16 @@ while ($res = mysqli_fetch_array($query)) {
                                         </tr>
                                     </thead>
 
-                                    <!-- <tbody>
+                                    <tbody>
                                         <?php 
 include 'includes/conn.php';
-$sql = "SELECT tblleaves.id as lid,tblemployees.name,tblemployees.id,employee.age,tblemployees.qualification,tblleaves.LeaveType,tblleaves.PostingDate,tblleaves.Status from tblleaves join tblemployees on tblleaves.empid=tblemployees.id order by lid desc limit 6";
+$q = "SELECT tblleaves.id as lid,tblemployees.name,tblemployees.id,employee.age,tblemployees.qualification,tblleaves.LeaveType,tblleaves.PostingDate,tblleaves.Status from tblleaves join tblemployees on tblleaves.empid=tblemployees.id order by lid desc limit 6";
 $query = mysqli_query($conn,$q);
-// $query->execute();
+$query->execute();
 $values=mysqli_fetch_assoc($result);
 $num_rows=$values['total'];
 $cnt=1;
-// if($query->rowCount() > 0)
+if($query->rowCount() > 0)
 {
  foreach($results as $result)
 {         
@@ -302,21 +314,19 @@ if($stats==1){
                                             </td>
                                         </tr>
                                         <?php } $cnt++;} ?>
-                                    </tbody> -->
+                                    </tbody>
                                 </table>
                             </div>
+
+
                         </div>
                     </div>
                 </div>
 
 
 
-
-
-
-
-
             </div>
+        </div>
     </main>
 
 </body>
