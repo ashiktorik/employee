@@ -66,7 +66,7 @@ include "includes/server.php";
                                             <h3 class="text-white">Login</h3>
                                         </div><br>
                                         <label><b>Email</b></label>
-                                        <input type="Email" name="username" class="form-control" required><br>
+                                        <input type="text" name="username" class="form-control" required><br>
                                         <label><b>Password</b></label>
                                         <input type="password" name="password" class="form-control" required><br>
                                         <button name="login_emp" class="btn btn-success button">Login</button><br>

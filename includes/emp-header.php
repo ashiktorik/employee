@@ -4,7 +4,7 @@ if(!$_SESSION['username'])
 {
 header("location:emp-login.php");
 }
-
+$time=time();
 $id = $_SESSION['username'];
 $avatar_path = $_SESSION['avatar'];
 $q = "select * from tblemployees where username = '$id'";

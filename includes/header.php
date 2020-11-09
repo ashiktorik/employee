@@ -12,7 +12,7 @@ if(!$_SESSION['name'])
 {
 header("location:login.php");
 }
-
+$time=time();
 $id = $_SESSION['name'];
 $avatar_path = $_SESSION['avatar'];
 $q = "select * from login where name = '$id'";

@@ -22,10 +22,11 @@ else
 </head>
 
 <body>
-
-    <div class="col-lg-6 m-auto">
-        <br>
-        <div><?php
+    <main>
+        <div class="helper">
+            <div class="container_fluid top_container">
+                <div class="col-lg-6 m-auto">
+                    <div><?php
         error_reporting(0);
 include 'includes/conn.php';
 
@@ -37,50 +38,53 @@ $query = mysqli_query($conn,$q);
 $res=mysqli_fetch_array($query);{
 
 ?>
-            <div class="card-header">
-                <h1 class="text-white text-center">Displaying Task Details</h1>
-            </div><br>
-            <div class="complain_view_outer">
-                <div class="complainview complainview_left"><label>Task ID</label>
+                        <div class="card-header">
+                            <h1 class="text-white text-center">Displaying Task Details</h1>
+                        </div>
+                        <div class="complain_view_outer">
+                            <div class="complainview complainview_left"><h5>Task ID</h5>
+                            </div>
+                            <div class="complainview complainview_right">
+                                <?php echo $res['id']; ?>
+                            </div>
+                        </div>
+                        <div class="complain_view_outer">
+                            <div class="complainview complainview_left"><h5>Task Name</h5>
+                            </div>
+                            <div class="complainview complainview_right">
+                                <?php echo $res['task_name']; ?>
+                            </div>
+                        </div>
+                        <div class="complain_view_outer complain_view_outer_mid">
+                            <div class="complainview complainview_left"><h5>Deadline</h5>
+                            </div>
+                            <div class="complainview complainview_right">
+                                <?php echo $res['end_date']; ?><bspn>at <?php echo $res['end_time']; ?>
+                            </div>
+                        </div>
+                        <div class="complain_view_outer">
+                            <div class="complainview complainview_left"><h5>Task Details</h5>
+                            </div>
+                            <div class="complainview complainview_right">
+                                <?php echo $res['task_details']; ?>
+                            </div>
+                        </div>
+                        <div class="complain_view_outer complain_view_outer_end">
+                            <div class="complainview complainview_left"><h5>Document</h5>
+                            </div>
+                            <div class="complainview complainview_right"><img style="max-width: 200px;"
+                                    src="<?php echo $res['file_comp']; ?>">
+                            </div>
+                        </div>
+                        <a href="emp-dashboard.php"><input type="button" name="" value="Back"
+                                class="btn btn-primary col-lg-12"></a>
+                        <?php } ?>
+                    </div>
                 </div>
-                <div class="complainview complainview_right">
-                <?php echo $res['id']; ?>
-                </div>
-            </div>
-            <div class="complain_view_outer">
-                <div class="complainview complainview_left"><label>Task Name</label>
-                </div>
-                <div class="complainview complainview_right">
-                    <?php echo $res['task_name']; ?>
-                </div>
-            </div>
-            <div class="complain_view_outer complain_view_outer_mid">
-                <div class="complainview complainview_left"><label>Deadline</label>
-                </div>
-                <div class="complainview complainview_right">
-                <?php echo $res['end_date']; ?><bspn>at <?php echo $res['end_time']; ?>
-                </div>
-            </div>
-            <div class="complain_view_outer">
-                <div class="complainview complainview_left"><label>Task Details</label>
-                </div>
-                <div class="complainview complainview_right">
-                <?php echo $res['task_details']; ?>
-                </div>
-            </div>
-            <div class="complain_view_outer complain_view_outer_end">
-                <div class="complainview complainview_left"><label>Document</label>
-                </div>
-                <div class="complainview complainview_right"><img style="max-width: 200px;"
-                src="<?php echo $res['file_comp']; ?>" >
-                </div>
-            </div>
-            <br>
-            <a href="emp-dashboard.php"><input type="button" name="" value="Back"
-                    class="btn btn-primary col-lg-12"></a>
                 <?php } ?>
+            </div>
         </div>
-    </div>
+        </maim>
 </body>
-                <?php } ?>
+
 </html>

@@ -234,7 +234,13 @@ while ($res = mysqli_fetch_array($query)) {
 
                                 <tr>
                                     <th class="emp-list-image"><img src="<?php echo $res['avatar']?>"></th>
-                                    <th><?php echo $res['id'] ?></th>
+                                    <th><?php echo $res['id'] ?>
+                                        <div class="online-status-row">
+                                            <span class="online-active"></span>
+                                            <span class="online-on-leave"></span>
+                                            <span class="online-deactive"></span>
+                                        </div>
+                                    </th>
                                     <th><?php echo $res['name'] ?></th>
                                     <th><?php echo $res['first_name'] ?> &nbsp; <?php echo $res['last_name'] ?></th>
                                     <th><?php echo $res['age'] ?></th>
@@ -243,7 +249,8 @@ while ($res = mysqli_fetch_array($query)) {
                                     <th><?php echo $res['date_of_birth'] ?></th>
                                     <th><?php echo $res['date_of_join'] ?></th>
                                     <th><a href="emp-profile.php?id=<?php echo $res['id']; ?>"
-                                            class="text-white"><button class="btn btn-success">View</button></a></th>
+                                            class="text-white"><button class="btn btn-success">View</button></a>
+                                    </th>
                                 </tr>
                                 <?php }
 ?>

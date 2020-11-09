@@ -2,9 +2,9 @@
 session_start();
 error_reporting(0);
 include('includes/conn.php');
-if(!$_SESSION['username'])
+if(!$_SESSION['name'])
     {   
-        echo ($_SESSION['username']);
+        echo ($_SESSION['name']);
 header('location:index.php');
 }
 else
@@ -23,9 +23,10 @@ else
 </head>
 
 <body>
-
-    <div class="col-lg-6 m-auto">
-        <br>
+<main>
+        <div class="helper">
+            <div class="container_fluid top_container">
+            <div class="col-lg-6 m-auto">
         <div><?php
         error_reporting(0);
 include 'includes/conn.php';
@@ -40,8 +41,8 @@ $res=mysqli_fetch_array($query);{
 ?>
             <div class="card-header">
                 <h1 class="text-white text-center">Displaying Task Details</h1>
-            </div><br>
-            <div class="complain_view_outer">
+            </div>
+            <div class="complain_view_outer ">
                 <div class="complainview complainview_left"><label>Task ID</label>
                 </div>
                 <div class="complainview complainview_right">
@@ -62,7 +63,7 @@ $res=mysqli_fetch_array($query);{
                 <?php echo $res['end_date']; ?><bspn>at <?php echo $res['end_time']; ?>
                 </div>
             </div>
-            <div class="complain_view_outer">
+            <div class="complain_view_outer ">
                 <div class="complainview complainview_left"><label>Task Details</label>
                 </div>
                 <div class="complainview complainview_right">
@@ -76,7 +77,6 @@ $res=mysqli_fetch_array($query);{
                 src="<?php echo $res['file_comp']; ?>" >
                 </div>
             </div>
-            <br>
             <?php
 		if($_SESSION ['user_role'] == 'admin'){
 			?>
@@ -89,6 +89,19 @@ $res=mysqli_fetch_array($query);{
                 <?php } ?>
         </div>
     </div>
+    
+</div>
+</div>
+</main>
+<?php } ?>
 </body>
-                <?php } ?>
+                
 </html>
+
+
+
+
+
+
+
+
