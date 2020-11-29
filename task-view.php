@@ -4,7 +4,6 @@ error_reporting(0);
 include('includes/conn.php');
 if(!$_SESSION['name'])
     {   
-        echo ($_SESSION['name']);
 header('location:index.php');
 }
 else
@@ -15,11 +14,18 @@ else
 
 <head>
     <title></title>
-    <?php
-    include 'includes/link-head.php';
-    include "includes/emp-header.php";
-    include "includes/header.php";
-    ?>
+
+     <?php
+      include 'includes/link-head.php';
+		if(!$_SESSION ['user_role'] == 'admin') {
+
+            include "includes/emp-header.php"; }
+            else{
+                include "includes/header.php";
+            }        
+?>
+
+    
 </head>
 
 <body>

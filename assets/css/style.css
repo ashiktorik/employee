@@ -764,7 +764,7 @@ aa .image-overlay {
 
 .img-edit {
 	padding: 3px;
-	background: #5b5ea6;
+	background: #007bff;
 	width: 100%;
 	/* position: absolute; */
 	bottom: 0;
@@ -776,16 +776,16 @@ aa .image-overlay {
 
 .profile-top-info,
 .profile-bottom-info {
-	border: 1px solid #ccc;
+	/* border: 1px solid #ccc; */
 	margin: auto;
-	margin-top: 50px;
+	margin-top: 20px;
 	/* box-shadow: 1px 0px 20px 0px #ccc; */
 	text-align: center;
 }
 
 .profile-action-info {
 	margin: auto;
-	margin-top: 50px;
+	margin-top: 20px;
 	/* box-shadow: 1px 0px 20px 0px #ccc; */
 	text-align: center;
 }
@@ -820,9 +820,11 @@ aa .image-overlay {
 
 .profile-basic-info-block .row,
 .full-details-row {
-	border-bottom: 1px solid #ccc;
-	margin-bottom: 20px;
+	/* border-bottom: 1px solid #ccc; */
+	margin-bottom: 2px;
 	text-align: left;
+	background: #181818;
+	padding:10px;
 }
 
 .pf-top-field {
@@ -840,16 +842,16 @@ aa .image-overlay {
 .details-title,
 .details-right-title {
 	padding: 10px;
-	background-color: #5b5ea6;
+	background-color: #007bff;
 	color: #fff;
-	margin-bottom: 30px;
+	/* margin-bottom: 30px; */
 }
 
 .col-.col-sm-6.col-full-detail-left:after {
 	content: '';
-	width: 1px;
+	width: 2px;
 	height: 100%;
-	background-color: #ccc;
+	background-color: #121212;
 	position: absolute;
 	right: 0;
 	top: 0;

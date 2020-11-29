@@ -90,7 +90,6 @@ include 'includes/header.php';
                 <div class="col-lg-6 m-auto">
                     <form class="form" method="post" enctype="multipart/form-data">
                         <!-- <form method="post"> -->
-                        <br>
                         <div>
                             <div class="card-header">
                                 <h1 class="text-white text-center">Insert Employee Details</h1>

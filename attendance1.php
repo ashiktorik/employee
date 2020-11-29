@@ -25,6 +25,8 @@ die();
 </head>
 
 <body>
+<main>
+<div class="helper">
 <?php $id = $_SESSION['id'];
 $q="select * from time where id=$id";
 $query = mysqli_query($conn,$q);
@@ -76,12 +78,14 @@ while ($res = mysqli_fetch_array($query)) {
                 <?php }
 ?>
             </table>
-            <a href="update.php?id=<?php echo $id; ?>" class="col-lg-3">
+            <a href="emp-profile.php?id=<?php echo $id; ?>" class="col-lg-3">
                 <button class="btn btn-success col-lg-4"
                         name="back">back</button></a>
         </div>
     </div>
 
+</div>
+</main>
 </body>
 
 </html>

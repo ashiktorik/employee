@@ -21,8 +21,9 @@ header("location:login.php");
 </head>
 
 <body>
-
-    <div class="container">
+<main>
+<div class="helper">
+<div class="container">
         <div class="col-lg-12"><br>
             <div class="row">
                 <h3 class="col-lg-8">Displaying Records</h3>
@@ -53,6 +54,9 @@ header("location:login.php");
                     </th>
                     <th>
                         <h5>Date of Join</h5>
+                    </th>
+                    <th>
+                        <h5>Action</h5>
                     </th>
                 </tr>
 
@@ -85,6 +89,8 @@ while ($res = mysqli_fetch_array($query)) {
             </table>
         </div>
     </div>
+</div>
+</main>
 </body>
 
 </html>

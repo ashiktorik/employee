@@ -17,7 +17,8 @@ header("location:login.php");
     ?>
 </head>
 <body>
-<?php 
+<main>
+<div class="helper"><?php 
 error_reporting(0);
 include 'conn.php';
 
@@ -140,6 +141,8 @@ if (isset($_POST['add']))
 		
 	</form>
 </div>
+</div>
+</main>
 
 </body>
 </html>

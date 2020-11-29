@@ -241,7 +241,7 @@ while ($res = mysqli_fetch_array($query)) {
                                             <span class="online-deactive"></span>
                                         </div>
                                     </th>
-                                    <th><?php echo $res['name'] ?></th>
+                                    <th><?php echo $res['username'] ?></th>
                                     <th><?php echo $res['first_name'] ?> &nbsp; <?php echo $res['last_name'] ?></th>
                                     <th><?php echo $res['age'] ?></th>
                                     <th><?php echo $res['salary'] ?></th>

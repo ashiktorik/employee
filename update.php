@@ -19,7 +19,7 @@ die();
 <html>
 
 <head>
-	<title></title>
+	<title>Employee Information Update</title>
 	<?php
 	include 'includes/link-head.php';
     include "includes/header.php";
@@ -27,9 +27,10 @@ die();
 </head>
 
 <body>
-
-	<div class="col-lg-6 m-auto">
-		<?php
+	<main>
+		<div class="helper">
+			<div class="col-lg-6 m-auto">
+				<?php
 	error_reporting(0);
 	include 'conn.php';
 	
@@ -56,116 +57,212 @@ die();
 	$query = mysqli_query($conn,$q);
 	$res=mysqli_fetch_array($query);
 	{ ?>
-		<form method="post">
-			<br>
-			<div>
-				<div class="card-header">
-					<h1 class="text-white text-center">Edit Employee Details</h1>
-				</div><br>
-				<label>Uniqu ID</label>
-				<input type="text" name="id" value="<?php echo $res['id']; ?>" readonly>
-				<br><br>
+				<form method="post">
 
-				<label>National ID</label>
-				<input type="text" name="nid_num" class="form-control" value="<?php echo $res['nid_num']; ?>"
-					required><br>
+					<div>
+						<div class="card-header">
+							<h1 class="text-white text-center">Edit Employee Details</h1>
+						</div>
 
-				<label>First Name</label>
-				<input type="text" name="first_name" class="form-control" value="<?php echo $res['first_name']; ?>"
-					required><br>
 
-				<label>Last Name</label>
-				<input type="text" name="last_name" class="form-control" value="<?php echo $res['last_name']; ?>"
-					required><br>
+						<div class="form-control">
+							<label>Uniqu ID</label>
+							<input type="text" name="id" value="<?php echo $res['id']; ?>" readonly>
+						</div>
 
-				<label>Age</label>
-				<input type="text" name="age" class="form-control" value="<?php echo $res['age']; ?>" required
-					pattern="[0-9]{1,15}" title="this field accepts only numbers"><br>
 
-				<label>Gender</label>
-				<select name="gender" class="form-control" value="<?php echo $res['gender']; ?>" required>>
-					<option>Male</option>
-					<option>Female</option>
-					<option>Other</option>
-				</select><br>
 
-				<label>Blood Group</label>
-				<select name="blood_group" class="form-control" value="<?php echo $res['blood_group']; ?>" required>>
-					<option>A+(ve)</option>
-					<option>A-(ve)</option>
-					<option>B+(ve)</option>
-					<option>B-(ve)</option>
-					<option>O+(ve)</option>
-					<option>O-(ve)</option>
-					<option>AB+(ve)</option>
-					<option>AB-(ve)</option>
-				</select><br>
 
-				<label>Religious</label>
-				<input type="text" name="religious" class="form-control" value="<?php echo $res['religious']; ?>"
-					required><br>
+						<div class="form-control">
+							<label>National ID</label>
+							<input type="text" name="nid_num" class="form-control"
+								value="<?php echo $res['nid_num']; ?>" required>
+						</div>
 
-				<label>Nationality</label>
-				<input type="text" name="nationality" class="form-control" value="<?php echo $res['nationality']; ?>"
-					required><br>
 
-				<label>Salary</label>
-				<input type="text" name="salary" class="form-control" value="<?php echo $res['salary']; ?>" required
-					pattern="[0-9]{1,15}" title="this field accepts only numbers"><br>
 
-				<label>Qualification</label>
-				<input type="text" name="qualification" class="form-control"
-					value="<?php echo $res['qualification']; ?>" required><br>
 
-				<label>Date of Birth</label>
-				<input type="text" name="dob" class="form-control" value="<?php echo $res['date_of_birth']; ?>"
-					placeholder="date-month-year" required><br>
 
-				<label>Date of Joining</label>
-				<input type="text" name="doj" class="form-control" value="<?php echo $res['date_of_join']; ?>"
-					placeholder="date-month-year" required><br>
+						<div class="form-control">
 
-				<label>Address</label>
-				<input type="text" name="address" class="form-control" value="<?php echo $res['address']; ?>"
-					placeholder="Address" required><br>
+							<label>First Name</label>
+							<input type="text" name="first_name" class="form-control"
+								value="<?php echo $res['first_name']; ?>" required>
+						</div>
 
-				<label>Phone</label>
-				<input type="text" name="phone" class="form-control" value="<?php echo $res['phone']; ?>" required
-					pattern="[0-9]{1,15}" title="this field accepts only numbers" limit="12"><br>
 
-				<label>Emergency Contact</label>
-				<input type="text" name="sos_contact" class="form-control" value="<?php echo $res['sos_contact']; ?>"
-					required pattern="[0-9]{1,15}" title="this field accepts only numbers" limit="12"><br>
 
-				<div class="row">
-					<div class="col-md-3">
-						<button class="btn btn-success" name="done">update</button>
-					</div>
 
-					<div class="col-md-3">
-						<input type="button" class="btn btn-danger" name="delete" value="Delete"
-							onclick="deleteme(<?php $_SESSION['id'] = $id; ?>)">
-					</div>
-					<div class="col-md-3">
-						<a href="attendance1.php?id=<?php echo $res['id']; ?>" class="btn btn-success"
-							name="view">attendance</a>
-					</div>
+						<div class="form-control">
+							<label>Last Name</label>
+							<input type="text" name="last_name" class="form-control"
+								value="<?php echo $res['last_name']; ?>" required>
+						</div>
 
-					<script type="text/javascript">
-						function deleteme(delid) {
-							if (confirm("Are you sure you want to delete ?")) {
-								window.location.href = "delete.php";
-							}
-						}
-					</script>
-				</div><br>
 
+
+
+
+						<div class="form-control">
+							<label>Age</label>
+							<input type="text" name="age" class="form-control" value="<?php echo $res['age']; ?>"
+								required pattern="[0-9]{1,15}" title="this field accepts only numbers">
+						</div>
+
+
+
+
+
+						<div class="form-control">
+							<label>Gender</label>
+							<select name="gender" class="form-control" value="<?php echo $res['gender']; ?>" required>>
+								<option>Male</option>
+								<option>Female</option>
+								<option>Other</option>
+							</select>
+						</div>
+
+
+
+
+
+
+						<div class="form-control">
+							<label>Blood Group</label>
+							<select name="blood_group" class="form-control" value="<?php echo $res['blood_group']; ?>"
+								required>>
+								<option>A+(ve)</option>
+								<option>A-(ve)</option>
+								<option>B+(ve)</option>
+								<option>B-(ve)</option>
+								<option>O+(ve)</option>
+								<option>O-(ve)</option>
+								<option>AB+(ve)</option>
+								<option>AB-(ve)</option>
+							</select>
+						</div>
+
+
+
+
+
+						<div class="form-control">
+							<label>Religious</label>
+							<input type="text" name="religious" class="form-control"
+								value="<?php echo $res['religious']; ?>" required>
+						</div>
+
+
+
+
+						<div class="form-control">
+							<label>Nationality</label>
+							<input type="text" name="nationality" class="form-control"
+								value="<?php echo $res['nationality']; ?>" required>
+						</div>
+
+
+
+
+
+						<div class="form-control">
+							<label>Salary</label>
+							<input type="text" name="salary" class="form-control" value="<?php echo $res['salary']; ?>"
+								required pattern="[0-9]{1,15}" title="this field accepts only numbers">
+						</div>
+
+
+
+
+
+						<div class="form-control">
+							<label>Qualification</label>
+							<input type="text" name="qualification" class="form-control"
+								value="<?php echo $res['qualification']; ?>" required>
+						</div>
+
+
+
+
+
+						<div class="form-control">
+							<label>Date of Birth</label>
+							<input type="text" name="dob" class="form-control"
+								value="<?php echo $res['date_of_birth']; ?>" placeholder="date-month-year" required>
+						</div>
+
+
+
+
+
+						<div class="form-control">
+							<label>Date of Joining</label>
+							<input type="text" name="doj" class="form-control"
+								value="<?php echo $res['date_of_join']; ?>" placeholder="date-month-year" required>
+						</div>
+
+
+
+
+
+						<div class="form-control">
+							<label>Address</label>
+							<input type="text" name="address" class="form-control"
+								value="<?php echo $res['address']; ?>" placeholder="Address" required>
+						</div>
+
+
+
+
+						<div class="form-control">
+							<label>Phone</label>
+							<input type="text" name="phone" class="form-control" value="<?php echo $res['phone']; ?>"
+								required pattern="[0-9]{1,15}" title="this field accepts only numbers" limit="12">
+						</div>
+
+
+
+
+
+						<div class="form-control">
+							<label>Emergency Contact</label>
+							<input type="text" name="sos_contact" class="form-control"
+								value="<?php echo $res['sos_contact']; ?>" required pattern="[0-9]{1,15}"
+								title="this field accepts only numbers" limit="12">
+						</div>
+
+
+
+						<div class="row">
+							<div class="col-md-3">
+								<button class="btn btn-success" name="done">update</button>
+							</div>
+
+
+
+							<div class="col-md-3">
+							<button type="button" class="btn btn-danger" name="delete" value="Delete"
+									onclick="deleteme(<?php $_SESSION['id'] = $id; ?>)">Delete</button>
+							</div>
+							<div class="col-md-3">
+							<a href="attendance1.php?id=<?php echo $res['id']; ?>" 
+									name="view"><button class="btn btn-success" name="done">attendance</button></a>
+							</div>
+
+							<script type="text/javascript">
+								function deleteme(delid) {
+									if (confirm("Are you sure you want to delete ?")) {
+										window.location.href = "delete.php";
+									}
+								}
+							</script>
+						</div>
+				</form>
+				<br>
+				<a href="emp-profile.php?id=<?php echo $res['id']; ?>" class="text-white"><button
+						class="btn btn-success col-lg-12">Back To Profile</button></a>
 			</div>
-		</form>
-		<a href="emp-profile.php?id=<?php echo $res['id']; ?>" class="text-white"><button
-				class="btn btn-success col-lg-12">Back To Profile</button></a>
-	</div>
-	<?php
+			<?php
 if(isset($_POST['done']))
 {
 $q2="update tblemployees set first_name = '$first_name' , last_name = '$last_name' , nid_num = '$nid_num' , gender = '$gender' , religious = '$religious' ,  blood_group = '$blood_group' , nationality = '$nationality' , address = '$address' , phone = $phone , sos_contact = $sos_contact , age = $age , salary = $salary , qualification = '$qualification' , date_of_birth = '$date_of_birth' , date_of_join = '$date_of_join' where id = $id";
@@ -188,7 +285,9 @@ $_SESSION['id'] = $id;
 
 }
 ?>
-	<?php  } ?>
+			<?php  } ?>
+		</div>
+	</main>
 </body>
 
 </html>
