@@ -27,7 +27,7 @@ die();
     <main>
         <div class="helper">
             <div class="container_fluid container-top">
-                    <div class="col-6" style="margin: auto">
+                    <div class="col-lg-6" style="margin: auto">
 
                         <div id="task-index">
                             <div class="task_outer">
@@ -41,7 +41,7 @@ die();
 <div class="form-group col-lg-6-m-auto">
     <div class="container">
         <div class="card-header">
-            <h3 class="text-white">Assaign Emplyee Leave</h3>
+            <h3 class="text-white">Assaign Empolyee Leave</h3>
         </div>
         <?php
 if(!$_SESSION['name']);{ ?>
@@ -52,7 +52,7 @@ if(!$_SESSION['name']);{ ?>
         <?php } ?>
         <div class="row" style="margin-right: -15px;
 margin-left: -15px;">
-            <div class="col-6">
+            <div class="col-lg-6">
                 <div class="date-title data-title .col-auto form-control">
                     <level><b>Valid From</b></level>
                     <div id="date-picker" class="input-group date"
@@ -64,7 +64,7 @@ margin-left: -15px;">
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6">
                 <div class="time-title data-title .col-auto form-control">
                     <level><b>Valid To</b></level>
                     <div id="date-picker" class="input-group date"
@@ -91,7 +91,7 @@ while ($row = mysqli_fetch_array($query)) {
 ?>
                 <option class="form-cotrol" value="<?php echo $row['id'];?>"
                     checked>
-                    <?php echo $row['name'];?></option>
+                    <?php echo $row['username'];?></option>
                 <?php } ?>
             </select>
 

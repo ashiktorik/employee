@@ -238,12 +238,11 @@ die();
 								<button class="btn btn-success" name="done">update</button>
 							</div>
 
-
-
 							<div class="col-md-3">
 							<button type="button" class="btn btn-danger" name="delete" value="Delete"
 									onclick="deleteme(<?php $_SESSION['id'] = $id; ?>)">Delete</button>
 							</div>
+							
 							<div class="col-md-3">
 							<a href="attendance1.php?id=<?php echo $res['id']; ?>" 
 									name="view"><button class="btn btn-success" name="done">attendance</button></a>

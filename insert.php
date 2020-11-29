@@ -42,14 +42,14 @@ if(isset($_POST['done']))
 
 
 			//insert user data into database
-            $q_u = "SELECT * FROM tblemployees WHERE name = '$username'";
+            $q_u = "SELECT * FROM tblemployees WHERE username = '$username'";
               $res_u = mysqli_query($mysqli, $q_u) or die (mysqli_error($mysqli));
                 if (mysqli_num_rows($res_u) > 0){
                     header("refresh:0");
                     $_SESSION['message'] = "<font color:red>Sorry Username is not Available</font>";}
                         else{
             //if the query is successsful!
-          echo  $q="INSERT INTO `tblemployees`(`name`, `first_name`, `last_name`, `password`, `age`, `gender`, `salary`, `date_of_birth`, `date_of_join`, `qualification`,`avatar`) VALUES ('$username','$first_name','$last_name','$pass','$age','$gender','$salary','$date_of_birth','$date_of_join','$qualification','$avatar_path')";
+          echo  $q="INSERT INTO `tblemployees`(`username`, `first_name`, `last_name`, `password`, `age`, `gender`, `salary`, `date_of_birth`, `date_of_join`, `qualification`,`avatar`) VALUES ('$username','$first_name','$last_name','$pass','$age','$gender','$salary','$date_of_birth','$date_of_join','$qualification','$avatar_path')";
 
             if ($conn->query($q) === TRUE) {
                 $_SESSION['message'] = "Employee added successfully";
@@ -92,7 +92,7 @@ include 'includes/header.php';
                         <!-- <form method="post"> -->
                         <div>
                             <div class="card-header">
-                                <h1 class="text-white text-center">Insert Employee Details</h1>
+                                <h1 class="text-white text-center">Add Employee Details</h1>
                             </div>
                             <div class="alert" style="background:#0a9c64"><?= $_SESSION['message'] ?></div>
                             <script>
@@ -108,11 +108,11 @@ include 'includes/header.php';
                             </div>
 
                             <div class="row">
-                                <div class="col-6 form-control">
+                                <div class="col-lg-6 form-control">
                                     <label>First Name</label>
                                     <input type="text" name="first_name" class="form-control" required><br>
                                 </div>
-                                <div class="col-6 form-control">
+                                <div class="col-lg-6 form-control">
 
                                     <label>Last Name</label>
                                     <input type="text" name="last_name" class="form-control" required><br>
@@ -125,14 +125,14 @@ include 'includes/header.php';
                             </div>
 
                             <div class="row">
-                                <div class="form-control col-6">
+                                <div class="form-control col-lg-6">
                                     <label>age</label>
                                     <input type="text" name="age" class="form-control" required pattern="[0-9]{1,15}"
                                         title="this field accepts only numbers">
                                 </div>
 
 
-                                <div class="form-control col-6">
+                                <div class="form-control col-lg-6">
                                     <label>Gender</label>
                                     <select class="selectpicker form-control" name="gender" required>
                                         <option class="form-cotrol" value="male" checked>Male</option>
@@ -144,20 +144,20 @@ include 'includes/header.php';
 
 
                             <div class="row">
-                                <div class="form-control col-6">
+                                <div class="form-control col-lg-6">
                                     <label>salary</label>
                                     <input type="text" name="salary" class="form-control" required pattern="[0-9]{1,15}"
                                         title="this field accepts only numbers">
                                 </div>
 
-                                <div class="form-control col-6">
+                                <div class="form-control col-lg-6">
                                     <label>qualification</label>
                                     <input type="text" name="qualification" class="form-control" required>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-6 form-control">
+                                <div class="col-lg-6 form-control">
                                     <label>date of Birth</label>
                                     <div class="row" style="display:flex;flex-wrap: nowrap;">
                                         <input type="text" name="day" class="form-control" placeholder="Day" required
@@ -174,7 +174,7 @@ include 'includes/header.php';
                                     </div>
                                 </div>
 
-                                <div class="col-6 form-control">
+                                <div class="col-lg-6 form-control">
                                     <label>date of Joining</label>
                                     <div class="row" style="display:flex;flex-wrap: nowrap;">
                                         <input type="text" name="day1" class="form-control" placeholder="Day" required
@@ -198,7 +198,7 @@ include 'includes/header.php';
 
 
                             <div class="avatar form-control"><label>Select your avatar: </label><input type="file"
-                                    name="avatar" accept="image/*" required /></div><br>
+                                    name="avatar" accept="image/*" class="form-control" required /></div><br>
                             <div class="row m-auto">
                                 <div class="col-md-5">
 
@@ -206,7 +206,7 @@ include 'includes/header.php';
                                     <input type="submit" value="Register" name="done" class="btn btn-block btn-primary"
                                         href="display.php"/></div>
                                 <div class="col-md-5">
-                                <a href="../dashboard.php"><input type="button" name=""
+                                <a href="dashboard.php"><input type="button" name=""
                                             value="Back to records" class="btn btn-danger col-lg-12"></a>
                                             </div>
                             </div>

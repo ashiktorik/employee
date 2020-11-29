@@ -26,7 +26,8 @@ die();
 	include 'includes/emp-header.php';?> 
 </head>
 
-<body>
+<body><main>
+	<div class="helper">
 	<?php
 	error_reporting(0);
 	include 'conn.php';
@@ -196,6 +197,8 @@ die();
 	</div>
 	</div>
 	<?php  } ?>
+	</div>
+</main>
 </body>
 
 </html>

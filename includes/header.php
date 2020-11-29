@@ -68,7 +68,7 @@ while ($res = mysqli_fetch_array($query))
 			<li tabindex="0" class="icon-emp-list"><span>All Employee</span></li>
 		</a>
 		<a href="assign-leave.php" name="insert">
-			<li tabindex="0" class="icon-settings"><span>Add Leave Type</span></li>
+			<li tabindex="0" class="icon-settings"><span>Assign Leave</span></li>
 		</a>
 		<a href="logout.php" name="logout">
 			<li tabindex="0" class="icon-logout">logout</li>

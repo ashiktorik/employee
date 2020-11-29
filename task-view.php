@@ -86,7 +86,7 @@ $res=mysqli_fetch_array($query);{
             <?php
 		if($_SESSION ['user_role'] == 'admin'){
 			?>
-		<a href="insert.php" name="insert"><input type="button" name="" value="Edit Task"
+		<a href="task-update.php?id=<?php echo $res['id']; ?>" name="insert"><input type="button" name="" value="Edit Task"
                     class="btn btn-primary col-lg-12">
 		</a>
 		<?php } ?>

@@ -14,7 +14,7 @@
 	box-sizing: border-box;
 }
 
-body {
+main{
 
 	margin: 0;
 	/* font-family: "proximaNova", sans-serif; */
@@ -233,6 +233,9 @@ textarea.form-control {
 	border: 1px solid;
 
 }
+.form-control[readonly] {
+    background-color: hsla(210, 16%, 93%, 0);
+}
 
 /*--------TASK FORM-----*/
 #task_box .task_outer {
@@ -303,11 +306,21 @@ main .helper {
 	background-color: #121212;
 	min-height: 90vh;
 }
+.public_helper{
+	margin: 0;
+	position: relative;
+	top: 10vh;
+	background-color: #121212;
+	min-height: 90vh;
+}
 
 main .helper span {
 	color: rgba(0, 0, 0, 0.2);
 	font-size: inherit;
 	display: block;
+}
+.bootstrap-select .dropdown-menu li a span.text{
+	color: rgb(0, 0, 0);
 }
 
 

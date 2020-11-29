@@ -28,7 +28,7 @@ include 'includes/header.php';
         <div class="helper">
             <div class="container_fluid top_container">
             <div class="container" id="task_box">
-        <div class="col-6" style="margin: auto">
+        <div class="col-lg-6" style="margin: auto">
             <div id="task-index">
                 <div class="task_outer">
                     <?php if(isset($_GET['message'])){
@@ -55,7 +55,7 @@ include 'includes/header.php';
                                 </div>
                                 <div class="row" style="margin-right: -15px;
     margin-left: -15px;">
-                                    <div class="col-6">
+                                    <div class="col-lg-6 .col-auto">
                                         <div class="date-title data-title .col-auto form-control">
                                             <level><b>Deadline Date</b></level>
                                             <div id="date-picker" class="input-group date"
@@ -67,7 +67,7 @@ include 'includes/header.php';
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-lg-6 .col-auto">
                                         <div class="time-title data-title .col-auto form-control">
                                             <level><b>Deadline Time</b></level>
                                             <div id="time-picker" class="input-group time"
@@ -92,7 +92,7 @@ $query = mysqli_query($conn,$q);
 while ($row = mysqli_fetch_array($query)) {
 ?>
                                         <option class="form-cotrol" value="<?php echo $row['id'];?>" checked>
-                                            <?php echo $row['name'];?></option>
+                                            <?php echo $row['username'];?></option>
                                         <?php } ?>
                                     </select>
 
